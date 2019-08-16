@@ -3,7 +3,12 @@
   become: yes
   become_method: sudo
   command: {{ selftests_script }}
+  register: self_out
   args:
     chdir: "{{ selftests_linux_dir }}"
     executable: /bin/bash
   tags: [ 'selftest_script' ]
+
+- debug: msg="{{ self_out.stdout_lines }}"
+
+- debug: msg="{{ self_out.stderr_lines }}"
