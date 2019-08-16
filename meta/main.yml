@@ -40,6 +40,6 @@ galaxy_info:
       - 12
       - 12SP1
       - 15
-  galaxy_tags: [ Linux, kernel, development, selftests ]
+  galaxy_tags: [ linux, kernel, development, selftests ]
 
 dependencies: []
