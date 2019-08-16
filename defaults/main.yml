@@ -1,0 +1,5 @@
+# SPDX-License-Identifier GPL-2.0+
+---
+
+selftests_script: "./tools/testing/selftests/firmware/fw_run_tests.sh"
+selftests_linux_dir: "/data/linux-next/"

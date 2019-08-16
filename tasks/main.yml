@@ -1,0 +1,9 @@
+---
+- name: Run Linux selftest {{ selftests_script }}
+  become: yes
+  become_method: sudo
+  command: {{ selftests_script }}
+  args:
+    chdir: "{{ selftests_linux_dir }}"
+    executable: /bin/bash
+  tags: [ 'selftest_script' ]
