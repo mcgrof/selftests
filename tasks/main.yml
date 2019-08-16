@@ -4,6 +4,7 @@
   become_method: sudo
   command: "{{ selftests_script }}"
   register: self_out
+  changed_when: "self_out.rc == 0"
   args:
     chdir: "{{ selftests_linux_dir }}"
     executable: /bin/bash
