@@ -1,4 +1,17 @@
 ---
+- name: Sanity check | remove known distribution firmware API modifiers
+  become: yes
+  become_flags: 'su - -c'
+  become_method: sudo
+  file:
+    state: absent
+    path: "{{ item }}"
+  tags: [ 'selftests', 'sanity' ]
+  with_items:
+    - "/lib/udev/rules.d/50-firmware.rules"
+  loop_control:
+    label: "{{ item }}"
+
 - name: Run Linux selftest {{ selftests_script }}
   become: yes
   become_method: sudo
