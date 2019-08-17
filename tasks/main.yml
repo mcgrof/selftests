@@ -20,7 +20,6 @@
   changed_when: "self_out.rc == 0"
   args:
     chdir: "{{ selftests_linux_dir }}"
-    executable: /bin/bash
   tags: [ 'selftest_script' ]
 
 - debug: msg="{{ self_out.stdout_lines }}"
